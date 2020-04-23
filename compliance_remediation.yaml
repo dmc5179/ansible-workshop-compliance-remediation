@@ -1,0 +1,12 @@
+---
+- name: Security Compliance Remediation Playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure GPG check is globally activated (yum)
+      ini_file:
+        dest: /etc/yum.conf
+        section: main
+        option: gpgcheck
+        value: 1
+        create: false

@@ -1,6 +1,7 @@
 ---
 - name: Security Compliance Remediation Playbook
   hosts: all
+  connection: local
   become: true
   tasks:
     - name: Ensure GPG check is globally activated (yum)

@@ -23,7 +23,7 @@
         data:
           severity: "{{ sn_severity }}"
           priority: "{{ sn_priority }}"
-          short_description: "This is a test opened by Ansible"
+          short_description: "System out of compliance with STIGS"
       register: new_incident
       when: ansible_check_mode and stig.changed
 

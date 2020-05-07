@@ -27,7 +27,7 @@
       register: new_incident
       when: ansible_check_mode and stig.changed
 
-    - debug: 
-      var: new_incident.record
-      when: new_incident.changed
+#    - debug: 
+#      var: new_incident.record
+#      when: new_incident.changed
 

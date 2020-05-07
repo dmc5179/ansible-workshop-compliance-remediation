@@ -1,0 +1,15 @@
+---
+
+# Service Now
+
+#snow_record variables
+
+sn_username: 'admin'
+sn_password: ''
+sn_instance: 'dev96761'
+
+#data variables
+
+sn_severity: 2
+sn_priority: 2
+

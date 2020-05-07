@@ -3,6 +3,7 @@
   hosts: all
   become: true
   tasks:
+
     - name: Ensure GPG check is globally activated (yum)
       ini_file:
         dest: /etc/yum.conf
@@ -10,3 +11,23 @@
         option: gpgcheck
         value: 1
         create: false
+      register: stig
+
+    - name: Create a change request
+      snow_record:
+        state: present
+        table: change_request
+        username: "{{ sn_username }}"
+        password: "{{ sn_password }}"
+        instance: "{{ sn_instance }}"
+        data:
+          severity: "{{ sn_severity }}"
+          priority: "{{ sn_priority }}"
+          short_description: "This is a test opened by Ansible"
+      register: new_incident
+      when: ansible_check_mode and stig.changed
+
+    - debug: 
+      var: new_incident.record
+      when: new_incident.changed
+

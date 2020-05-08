@@ -14,17 +14,20 @@
       register: stig
 
     - name: Create a change request
-      delegate_to: localhost
+#      delegate_to: localhost
+      check_mode: no
       become: false
       snow_record:
         state: present
-        table: change_request
+#        table: change_request
         username: "{{ sn_username }}"
         password: "{{ sn_password }}"
         instance: "{{ sn_instance }}"
         data:
           severity: "{{ sn_severity }}"
           priority: "{{ sn_priority }}"
+#          category: "{{ sn_category }}"
+          comments: "STIG check failed"
           short_description: "System out of compliance with STIGS"
       register: new_incident
       when: ansible_check_mode and stig.changed
@@ -32,4 +35,3 @@
     - debug: 
         var: new_incident.record
       when: new_incident.changed
-

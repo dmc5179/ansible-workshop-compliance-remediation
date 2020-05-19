@@ -9,7 +9,7 @@
         dest: /etc/yum.conf
         section: main
         option: gpgcheck
-        value: 1
+        value: "{{ 1 | int }}"
         create: false
       register: stig
 

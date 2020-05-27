@@ -5,11 +5,11 @@
 #snow_record variables
 
 sn_username: 'admin'
-sn_password: ''
-sn_instance: 'dev96761'
+sn_password: 'RedHat2@2@'
+#sn_instance: 'dev96761'
+sn_instance: 'dev65869'
 
 #data variables
 
 sn_severity: 3
 sn_priority: 2
-

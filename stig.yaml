@@ -38,7 +38,7 @@
           severity: "{{ sn_severity }}"
           priority: "{{ sn_priority }}"
 #          category: "{{ sn_category }}"
-          comments: "STIG check failed"
+          comments: "Automated Scan results from Ansible Tower"
           short_description: "System out of compliance with STIGS"
           work_notes: "System {{ inventory_hostname }} out of compliance with STIGs"
       register: new_incident

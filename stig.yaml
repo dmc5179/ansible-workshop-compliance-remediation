@@ -40,7 +40,7 @@
 #          category: "{{ sn_category }}"
           comments: "Automated Scan results from Ansible Tower"
           short_description: "System out of compliance with STIGS"
-          work_notes: "System {{ inventory_hostname }} out of compliance with STIGs"
+          work_notes: "System {{ ansible_fqdn }} out of compliance with STIGs"
       register: new_incident
       when: ansible_check_mode and stig.changed
 

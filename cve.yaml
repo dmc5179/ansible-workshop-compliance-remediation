@@ -1,0 +1,10 @@
+---
+- name: CVE Patch Playbook
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Ensure dependencies installed
+      shell: yum update --cve "{{ cve }}"
+      args:
+        warn: false

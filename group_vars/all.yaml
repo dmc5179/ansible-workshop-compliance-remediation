@@ -6,7 +6,8 @@
 
 snow:
   username: 'admin'
-  password: ''
-  instance: ''
-  severity: 3
+  password: 'g7RhZnXkxZ8O'
+  instance: 'dev91097'
+  severity: 2
   priority: 2
+

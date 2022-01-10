@@ -31,13 +31,13 @@
       snow_record:
         state: present
 #        table: change_request
-        username: "{{ sn_username }}"
-        password: "{{ sn_password }}"
-        instance: "{{ sn_instance }}"
+        username: "{{ snow.username }}"
+        password: "{{ snow.password }}"
+        instance: "{{ snow.instance }}"
         data:
-          severity: "{{ sn_severity }}"
-          priority: "{{ sn_priority }}"
-#          category: "{{ sn_category }}"
+          severity: "{{ snow.severity }}"
+          priority: "{{ snow.priority }}"
+#          category: "{{ snow.category }}"
           comments: "Automated Scan results from Ansible Tower"
           short_description: "System out of compliance with STIGS"
           work_notes: "System {{ ansible_fqdn }} out of compliance with STIGs"

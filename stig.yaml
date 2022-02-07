@@ -5,18 +5,18 @@
   tasks:
 
     - name: Ensure dependencies installed
-      package:
+      ansible.builtin.package:
         name: python3-pip
         state: present
 
     - name: Ensure pysnow module is installed
-      pip:
+      ansible.builtin.pip:
         executable: pip3
         name: pysnow
         state: present
 
     - name: Ensure GPG check is globally activated (yum)
-      ini_file:
+      community.general.ini_file:
         dest: /etc/yum.conf
         section: main
         option: gpgcheck
@@ -28,7 +28,7 @@
 #      delegate_to: localhost
       check_mode: no
       become: false
-      snow_record:
+      servicenow.servicenow.snow_record:
         state: present
 #        table: change_request
         username: "{{ snow.username }}"

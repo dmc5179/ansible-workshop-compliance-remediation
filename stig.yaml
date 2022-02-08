@@ -16,7 +16,7 @@
         state: present
 
     - name: Ensure GPG check is globally activated (yum)
-      #community.general.ini_file:
+      community.general.ini_file:
       ini_file:
         dest: /etc/yum.conf
         section: main
@@ -29,8 +29,8 @@
 #      delegate_to: localhost
       check_mode: no
       become: false
-      #servicenow.servicenow.snow_record:
-      snow_record:
+      servicenow.servicenow.snow_record:
+      #snow_record:
         state: present
 #        table: change_request
         username: "{{ snow.username }}"
